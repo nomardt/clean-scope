@@ -44,9 +44,19 @@ where
 fn get_subdomain(domain: &str) -> Option<&str> {
     let mut parts = domain.split('.');
 
-    if parts.clone().count() > 2 {
-        parts.next()
-    } else {
-        None
+    if let Some(first_part) = parts.next() {
+        if first_part == "www" {
+            if parts.clone().count() > 2 {
+                return parts.next();
+            } else {
+                return None;
+            }
+        } else {
+            if parts.clone().count() > 1 {
+                return Some(first_part);
+            }
+        }
     }
+
+    None
 }
