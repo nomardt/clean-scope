@@ -1,1 +1,19 @@
-/target
+# Binaries for programs and dynamic libraries
+/target/
+
+# Build scripts output
+**/*.rs.bk
+
+# Cargo.lock for libraries (if you are building a library, uncomment this line)
+# Cargo.lock
+
+# IDE/Editor directories and files
+.idea/
+.vscode/
+*.swp
+
+# macOS metadata files
+.DS_Store
+
+# Windows metadata files
+Thumbs.db
